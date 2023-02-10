@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+:root {
+  --ff: "Anton", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+	--fs: clamp(4rem, 2.545rem + 7.27vw, 8rem);
+  --bg: hsl(220 91% 90%);
+  --text: hsl(220 91% 64%);
+  --hi: hsl(220 91% 64%);
+}
+
+::selection {
+  background: var(--text);
+  color: var(--bg)
+}
+
+html {
+  font-family: var(--ff);
+  font-size: 100%;
+  block-size: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: optimizeSpeed;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+	font-weight: inherit;
+}
+
+body {
+	min-block-size: 100%;
+  font-weight: 400;
+  padding: 5vmin;
+	display: grid;
+	place-content: center;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/*****************************
+Start poster
+*****************************/
+
+h1 {
+  font-size: var(--fs);
+  line-height: 1;
+	max-inline-size: 8ch;
+	display: grid;
+	grid-template-columns: repeat(8, 1ch);
+}
+
+span {
+	font-size: var(--rfs, 1em);
+	text-transform: var(--tt, normal);
+}
+
+span:nth-child(1) {
+	--rfs: .95em;
+	grid-column: 1 / 9;
+}
+
+span:nth-child(2) {
+	--rfs: .28em;
+	--tt: uppercase;
+	grid-column: 1 / 6;
+}
+
+span:nth-child(3) {
+	--rfs: .48em;
+	grid-column: 1 / 6;
+}
+
+span:nth-child(4) {
+	grid-column: 6 / 9;
+	grid-row: 2 / 4;
+	background: var(--hi);
+	max-inline-size: 1.35em;
+}
+
+span:nth-child(5) {
+	grid-column: 1 / 9;
+	--tt: uppercase;
+}
+
+span:nth-child(6) {
+	--rfs: .28em;
+	letter-spacing: .03em;
+	grid-column: 1 / 5;
+}
+
+span:nth-child(7) {
+	grid-column: 1 / 5;
+	block-size: .35em;
+	max-inline-size: 1.85em;
+	background: var(--hi);
+}
+
+span:nth-child(8) {
+	--rfs: .765em;
+	--tt: uppercase;
+	grid-column: 5 / 9;
+	grid-row: 5 / 7;
+}
